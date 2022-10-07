@@ -10,7 +10,7 @@ import { UserdataService } from './services/userdata.service';
 export class AppComponent {
   name = 'is simple, go step by step';
 
-  userlist: any = []; // Using subscribe
+  userlist: any = []; // Using subscribe method
 
   getdata$: Observable<any>; // Using observable method
 
