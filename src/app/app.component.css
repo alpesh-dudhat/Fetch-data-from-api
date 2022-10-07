@@ -1,0 +1,14 @@
+p {
+  font-family: Lato;
+}
+
+table,
+tr,
+td {
+  /* border: 1px solid; */
+}
+
+table{
+  table-layout: auto;
+  border-collapse: collapse;
+}
