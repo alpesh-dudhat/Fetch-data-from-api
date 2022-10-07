@@ -1,6 +1,47 @@
 <hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
 
+<h4>Get data with Observable method</h4>
+<table border="1">
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Website</th>
+    <th>Company</th>
+  </thead>
+  <tr *ngFor="let data of getdata$ | async">
+    <td>
+      {{ data.id }}
+    </td>
+    <td>
+      {{ data.name }}
+    </td>
+    <td>
+      {{ data.username }}
+    </td>
+    <td>
+      {{ data.email }}
+    </td>
+    <td>
+      {{ data.address.city }}
+    </td>
+    <td>
+      {{ data.phone }}
+    </td>
+    <td>
+      {{ data.website }}
+    </td>
+    <td>
+      {{ data.company.name }}
+    </td>
+  </tr>
+</table>
+
+<h4>Get data with subscribe method</h4>
 <table border="1">
   <thead>
     <th>Id</th>

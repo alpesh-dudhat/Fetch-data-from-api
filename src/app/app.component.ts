@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { Observable } from 'rxjs';
 import { UserdataService } from './services/userdata.service';
 
 @Component({
@@ -8,11 +9,19 @@ import { UserdataService } from './services/userdata.service';
 })
 export class AppComponent {
   name = 'is simple, go step by step';
-  userlist: any = [];
+
+  userlist: any = []; // Using subscribe
+
+  getdata$: Observable<any>; // Using observable method
+
   constructor(private userdata: UserdataService) {
+    // Subscribe
     this.userdata.getUser().subscribe((userinfo) => {
       console.log(userinfo);
       this.userlist = userinfo;
     });
+
+    //  Observables
+    this.getdata$ = this.userdata.getUser();
   }
 }
